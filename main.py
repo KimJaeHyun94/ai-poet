@@ -1,10 +1,7 @@
-#from dotenv import load_dotenv
-#load_dotenv()
-
 import streamlit as st
-from langchain.llms import OpenAI
+from langchain.chat_models.openai import ChatOpenAI
 
-chat_model = OpenAI()
+chat_model = ChatOpenAI()
 
 st.title("인공지능 시인")
 
@@ -14,21 +11,3 @@ if st.button("시 작성 요청하기"):
     with st.spinner('시 작성중...'):
         result = chat_model.predict(content + "에 대한 시를 써줘")
         st.write(result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
